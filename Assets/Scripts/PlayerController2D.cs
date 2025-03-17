@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;  // Required for scene management
 
 public class PlayerController2D : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerController2D : MonoBehaviour
     public Transform groundCheck;  // Empty GameObject under the player
     public LayerMask groundLayer;  // Layer to detect ground
 
+    public float fallThreshold = -15f; 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,16 +20,22 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
-        // Get movement input (-1 for left, 1 for right)
+        
         float moveInput = Input.GetAxisRaw("Horizontal");
 
         // Move the player
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
-        // Jumping
+       
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, 12f);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        
+        if (transform.position.y < fallThreshold)
+        {
+            RestartScene();
         }
     }
 
@@ -34,5 +43,10 @@ public class PlayerController2D : MonoBehaviour
     {
         // Check if player is touching the ground
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
