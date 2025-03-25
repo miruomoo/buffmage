@@ -5712,6 +5712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
+  maxJumps: 1
   groundCheck: {fileID: 1198440070}
   groundLayer:
     serializedVersion: 2
@@ -5886,7 +5887,7 @@ Transform:
   m_GameObject: {fileID: 1581721681}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 0.9, z: 0}
+  m_LocalPosition: {x: 0.31, y: 0.89, z: 0}
   m_LocalScale: {x: 5.284702, y: 3.1431065, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
