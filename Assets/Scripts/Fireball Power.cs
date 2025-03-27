@@ -7,6 +7,7 @@ public class FireballPower : MonoBehaviour
     private Collider2D fireballTrigger;
     public GameObject fireballPickup;
     private bool playerInRange = false;
+    [SerializeField] private GameObject player;
 
     private void Start()
     {
@@ -49,6 +50,11 @@ public class FireballPower : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             fireballPickup.SetActive(false);
+            FireballShoot fireballShoot = player.GetComponent<FireballShoot>();
+            if (fireballShoot != null)
+            {
+                fireballShoot.EnableFireballPower();
+            }
         }
     }
 }
