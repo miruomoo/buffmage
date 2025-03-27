@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: {fileID: 451104055}
+  fireballPickup: {fileID: 1472804208}
 --- !u!1 &201744154
 GameObject:
   m_ObjectHideFlags: 0

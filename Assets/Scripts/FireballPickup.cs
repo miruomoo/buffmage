@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+
 public class FireballPickup : MonoBehaviour
 {
     public GameObject closedChest;
