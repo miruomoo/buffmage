@@ -8,6 +8,7 @@ public class FireballPower : MonoBehaviour
     public GameObject fireballPickup;
     private bool playerInRange = false;
     [SerializeField] private GameObject player;
+    public GameObject fireballUI;
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class FireballPower : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             fireballPickup.SetActive(false);
+            fireballUI.SetActive(true);
             FireballShoot fireballShoot = player.GetComponent<FireballShoot>();
             if (fireballShoot != null)
             {

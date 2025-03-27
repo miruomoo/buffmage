@@ -9,5 +9,11 @@ public class Enemy2D : MonoBehaviour
         {
             Debug.Log("Player Hit!");
         }
+        if (other.CompareTag("Projectile"))
+        {
+            Debug.Log("Enemy Hit!");
+            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+        }
     }
 }
