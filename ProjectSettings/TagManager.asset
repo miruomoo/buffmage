@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+<<<<<<< HEAD
   - MenuMusic
+=======
+  - Enemy
+  - Projectile
+>>>>>>> 179d58dd8d67a605568b9fb5fe7bf5829f6fe683
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Camera
-  - 
+  - Projectile
   - 
   - 
   - 

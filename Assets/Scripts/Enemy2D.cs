@@ -7,8 +7,7 @@ public class Enemy2D : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Restart the current scene
-            Debug.Log("Scene Restarted!");
+            Debug.Log("Player Hit!");
         }
     }
 }
