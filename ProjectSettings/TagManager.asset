@@ -3,17 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+<<<<<<< HEAD
+  - MenuMusic
+=======
+  - Enemy
+  - Projectile
+>>>>>>> 179d58dd8d67a605568b9fb5fe7bf5829f6fe683
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Camera
+  - Projectile
+  - Player
   - 
   - 
   - 
@@ -40,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Overlay
+    uniqueID: 3625077143
     locked: 0
