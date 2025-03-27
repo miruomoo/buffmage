@@ -13,7 +13,7 @@ public class AutoOpenChest : MonoBehaviour
     private void Start()
     {
         chestTrigger = GetComponent<Collider2D>();
-        
+
         if (closedChest != null) closedChest.SetActive(true);
         if (openChest != null) openChest.SetActive(false);
     }
@@ -28,15 +28,17 @@ public class AutoOpenChest : MonoBehaviour
 
     void OpenChest()
     {
+
         if (chestOpened) return;
 
         chestOpened = true;
-        
+
         // Switch chest visuals
         if (closedChest != null) closedChest.SetActive(false);
         if (openChest != null) openChest.SetActive(true);
-        
+
         // Disable the trigger after opening
         if (chestTrigger != null) chestTrigger.enabled = false;
+
     }
 }
