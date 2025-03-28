@@ -5,7 +5,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 3;
     private int currentHealth;
-    
+    public string levelName;
+    [SerializeField] private GameObject player;
+
     // Array of health images (hearts)
     public GameObject[] healthImages = new GameObject[3];
 
@@ -13,6 +15,14 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthDisplay();
+        if (levelName == "level2")
+        {
+            FireballShoot fireballShoot = player.GetComponent<FireballShoot>();
+            if (fireballShoot != null)
+            {
+                fireballShoot.EnableFireballPower();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

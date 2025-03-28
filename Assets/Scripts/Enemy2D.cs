@@ -3,17 +3,17 @@ using UnityEngine.SceneManagement; // Import SceneManagement to restart the scen
 
 public class Enemy2D : MonoBehaviour
 {
+    private int health = 3;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player Hit!");
-        }
         if (other.CompareTag("Projectile"))
         {
-            Debug.Log("Enemy Hit!");
-            gameObject.SetActive(false);
-            other.gameObject.SetActive(false);
+            health--;
+            if (health <= 0)
+            {
+                gameObject.SetActive(false);
+                other.gameObject.SetActive(false);
+            }
         }
     }
 }
