@@ -32,6 +32,10 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage();
         }
+        if (other.CompareTag("Health"))
+        {
+            Heal();
+        }
     }
 
     private void TakeDamage()
@@ -43,6 +47,12 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
+    }
+
+    private void Heal()
+    {
+        currentHealth++;
+        UpdateHealthDisplay();
     }
 
     private void UpdateHealthDisplay()
