@@ -6833,7 +6833,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1198440070}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   fallThreshold: -15
 --- !u!114 &1538381216
 MonoBehaviour:
