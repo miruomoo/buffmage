@@ -35,4 +35,12 @@ public class SlimeMove : MonoBehaviour
             movingRight = true;
         }
     }
+
+    public void freeze(){
+        moveSpeed = 0;
+    }
+
+    public void unfreeze(){
+        moveSpeed = 2;
+    }
 }

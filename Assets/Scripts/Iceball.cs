@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : MonoBehaviour
+public class Iceball : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,7 @@ public class Fireball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Destroy the iceball after 3 seconds
         Destroy(gameObject, 3f);
     }
 
@@ -23,7 +24,7 @@ public class Fireball : MonoBehaviour
         {
             // Optional: Add particle effects or sound here before destroying
             
-            // Destroy the fireball
+            // Destroy the iceball
             Destroy(gameObject);
         }
     }

@@ -485,7 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closedChest: {fileID: 105333928}
   openChest: {fileID: 160389592}
-  fireballPickup: {fileID: 1472804208}
+  powerPickup: {fileID: 1472804208}
 --- !u!1 &160389592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6848,6 +6848,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  levelName: 
+  player: {fileID: 0}
   healthImages:
   - {fileID: 1045821356}
   - {fileID: 658110116}

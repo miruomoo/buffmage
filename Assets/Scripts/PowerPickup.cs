@@ -2,11 +2,11 @@ using UnityEngine;
 using TMPro;
 
 
-public class FireballPickup : MonoBehaviour
+public class PowerPickup : MonoBehaviour
 {
     public GameObject closedChest;
     public GameObject openChest;
-    public GameObject fireballPickup;
+    public GameObject powerPickup;
     private bool chestOpened = false;
 
     // Reference to this object's collider
@@ -30,7 +30,7 @@ public class FireballPickup : MonoBehaviour
 
     void OpenChest()
     {
-        fireballPickup.SetActive(true);
+        powerPickup.SetActive(true);
 
         if (chestOpened) return;
 

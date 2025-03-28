@@ -8,6 +8,7 @@ TagManager:
   - MenuMusic
   - Enemy
   - Projectile
+  - Iceball
   layers:
   - Default
   - TransparentFX
