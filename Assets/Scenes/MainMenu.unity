@@ -543,6 +543,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 2055468689}
   infoText: {fileID: 133877772}
   settingsPanel: {fileID: 1690338553}
+  ezekielSprite: {fileID: 1244440054}
 --- !u!4 &419049343
 Transform:
   m_ObjectHideFlags: 0
@@ -2371,6 +2372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1244440055}
   - component: {fileID: 1244440054}
+  - component: {fileID: 1244440056}
   m_Layer: 0
   m_Name: hero_placeholder
   m_TagString: Untagged
@@ -2438,13 +2440,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244440053}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49, y: 1.68, z: 0}
-  m_LocalScale: {x: 6.7623377, y: 5.021567, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 45.915707, y: 157.42526, z: -8433.497}
+  m_LocalScale: {x: 633.6684, y: 470.54852, z: 93.70552}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1898532525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1244440056
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244440053}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1307387932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,6 +3690,7 @@ RectTransform:
   - {fileID: 2118327436}
   - {fileID: 1860723019}
   - {fileID: 1690338554}
+  - {fileID: 1244440055}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3847,6 +3862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderboardPanel: {fileID: 1860723016}
+  ezekielSprite: {fileID: 1244440054}
 --- !u!4 &1999606417
 Transform:
   m_ObjectHideFlags: 0
@@ -4602,4 +4618,3 @@ SceneRoots:
   - {fileID: 1999606417}
   - {fileID: 617532285}
   - {fileID: 419049343}
-  - {fileID: 1244440055}
