@@ -14,10 +14,15 @@ public class PlayerController2D : MonoBehaviour
     public LayerMask groundLayer;  // Layer to detect ground
 
     public float fallThreshold = -15f; 
+    public GameObject deathMenuPanel;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (deathMenuPanel == null)
+        {
+            deathMenuPanel = GameObject.Find("DeathMenuCanvas");  
+        }
     }
 
     void Update()
@@ -44,7 +49,7 @@ public class PlayerController2D : MonoBehaviour
         
         if (transform.position.y < fallThreshold)
         {
-            RestartScene();
+            ShowDeathMenu();
         }
     }
 
@@ -54,8 +59,16 @@ public class PlayerController2D : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void RestartScene()
+     private void ShowDeathMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (deathMenuPanel != null)
+        {
+            deathMenuPanel.SetActive(true);
+            Time.timeScale = 0f; // Pause the game
+        }
+        else
+        {
+            Debug.LogError("DeathMenuPanel is not assigned! Make sure it's in the scene.");
+        }
     }
 }

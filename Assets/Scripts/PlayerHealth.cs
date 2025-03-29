@@ -10,11 +10,13 @@ public class PlayerHealth : MonoBehaviour
 
     // Array of health images (hearts)
     public GameObject[] healthImages = new GameObject[3];
+    public GameObject deathMenuPanel;
 
     void Start()
     {
         currentHealth = maxHealth;
         UpdateHealthDisplay();
+        deathMenuPanel.SetActive(false);
         if (levelName == "level2")
         {
             FireballShoot fireballShoot = player.GetComponent<FireballShoot>();
@@ -68,9 +70,9 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void Die()
+     private void Die()
     {
-        // Restart the scene when player dies
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        deathMenuPanel.SetActive(true);
+        Time.timeScale = 0f; 
     }
 }
