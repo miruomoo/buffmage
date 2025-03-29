@@ -4,11 +4,22 @@ using System.Collections;
 
 public class Enemy2D : MonoBehaviour
 {
-    private int health = 3;
+    public int health = 3;
+    [SerializeField] private GameObject frozenEffect;
+
     private IEnumerator UnfreezeAfterDelay(SlimeMove slime, float delay)
     {
         yield return new WaitForSeconds(delay);
         slime.unfreeze();
+    }
+
+    private IEnumerator DeactivateFrozenEffect(GameObject frozenEffect, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (frozenEffect != null)
+        {
+            frozenEffect.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +41,13 @@ public class Enemy2D : MonoBehaviour
             {
                 slimeMove.freeze();
                 StartCoroutine(UnfreezeAfterDelay(slimeMove, 6f));
+                
+                // Simply activate/deactivate the referenced effect
+                if (frozenEffect != null)
+                {
+                    frozenEffect.SetActive(true);
+                    StartCoroutine(DeactivateFrozenEffect(frozenEffect, 6f));
+                }
             }
             other.gameObject.SetActive(false);
         }
