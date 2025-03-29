@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - Iceball
   - Health
+  - Mana
   layers:
   - Default
   - TransparentFX

@@ -7212,6 +7212,7 @@ GameObject:
   - component: {fileID: 1538381215}
   - component: {fileID: 1538381216}
   - component: {fileID: 1538381217}
+  - component: {fileID: 1538381218}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -7404,6 +7405,32 @@ MonoBehaviour:
   fireballPrefab: {fileID: 7146806739331601621, guid: 9f4e7d142db46424880c993eb6edc2f1, type: 3}
   fireballSpeed: 10
   firePoint: {fileID: 0}
+--- !u!114 &1538381218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538381210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12ae28278737a34595c6ee73d08a3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 10
+  currentMana: 0
+  player: {fileID: 0}
+  manaImages:
+  - {fileID: 1378223735}
+  - {fileID: 322870722}
+  - {fileID: 1820872925}
+  - {fileID: 1687248251}
+  - {fileID: 794677394}
+  - {fileID: 1983979799}
+  - {fileID: 219193396}
+  - {fileID: 339470221}
+  - {fileID: 1767248487}
+  - {fileID: 540762683}
 --- !u!1 &1538642911
 GameObject:
   m_ObjectHideFlags: 0

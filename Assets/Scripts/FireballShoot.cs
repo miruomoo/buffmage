@@ -32,9 +32,10 @@ public class FireballShoot : MonoBehaviour
     void Update()
     {
         // Only shoot if we have the power and click
-        if (hasFireballPower && Input.GetMouseButtonDown(0))
+        if (hasFireballPower && Input.GetMouseButtonDown(0) && gameObject.GetComponent<PlayerMana>().currentMana >= 1)
         {
             ShootFireball();
+            gameObject.GetComponent<PlayerMana>().UseSpell("fireball");
         }
     }
 

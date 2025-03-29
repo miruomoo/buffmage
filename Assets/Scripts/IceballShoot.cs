@@ -36,10 +36,11 @@ public class IceballShoot : MonoBehaviour
     void Update()
     {
         // Only shoot if we have the power, click, and enough time has passed
-        if (hasFreezePower && Input.GetMouseButtonDown(1) && Time.time >= nextFireTime)
+        if (hasFreezePower && Input.GetMouseButtonDown(1) && Time.time >= nextFireTime && gameObject.GetComponent<PlayerMana>().currentMana >= 2)
         {
             ShootIceball();
             nextFireTime = Time.time + fireRate; // Set next allowed fire time
+            gameObject.GetComponent<PlayerMana>().UseSpell("freeze");
         }
     }
 
