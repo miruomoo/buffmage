@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         currentHealth = maxHealth;
         UpdateHealthDisplay();
         deathMenuPanel.SetActive(false);
