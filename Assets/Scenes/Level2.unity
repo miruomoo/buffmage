@@ -8438,8 +8438,8 @@ Transform:
   m_GameObject: {fileID: 1116027261}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 0.89, z: 0}
-  m_LocalScale: {x: 5.284702, y: 3.1431065, z: 1}
+  m_LocalPosition: {x: 0.21, y: 0.06, z: 0}
+  m_LocalScale: {x: 5.648331, y: 3.5328045, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2080449041}
@@ -8485,7 +8485,7 @@ SpriteRenderer:
   m_SortingLayerID: -669890153
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 265d0142f0281cc4abba2f247072c0fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2589c5b99215a4a4fa8a6fd1d797596e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9589,7 +9589,7 @@ Transform:
   m_GameObject: {fileID: 1280269883}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.11, y: 0.68, z: 0}
+  m_LocalPosition: {x: 1.3, y: 0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15364,6 +15364,7 @@ GameObject:
   - component: {fileID: 2080449043}
   - component: {fileID: 2080449044}
   - component: {fileID: 2080449045}
+  - component: {fileID: 2080449046}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -15515,7 +15516,7 @@ Transform:
   m_GameObject: {fileID: 2080449036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.46, y: 0.23, z: 0}
+  m_LocalPosition: {x: -12.46, y: -0.206, z: 0}
   m_LocalScale: {x: 0.25, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15600,6 +15601,23 @@ MonoBehaviour:
   - {fileID: 803907973}
   - {fileID: 109854329}
   - {fileID: 1731986155}
+--- !u!114 &2080449046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080449036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7379ef0db1256146bf7fcae84daa940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1116027263}
+  skinSprites:
+  - {fileID: 21300000, guid: 2589c5b99215a4a4fa8a6fd1d797596e, type: 3}
+  - {fileID: 21300000, guid: ff7071e61c20d2d428d46cebebfa2218, type: 3}
+  - {fileID: 21300000, guid: eaeba5e0d7ee1eb48bcbeb6bf59cd2ff, type: 3}
 --- !u!1 &2085056681
 GameObject:
   m_ObjectHideFlags: 0

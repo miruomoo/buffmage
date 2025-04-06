@@ -16,7 +16,16 @@ public class SkinManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Initialize the UI with the first skin
+        // Load the previously selected skin index if it exists
+        currentSkinIndex = PlayerPrefs.GetInt("SelectedSkinIndex", 0);
+        
+        // Make sure the loaded index is valid
+        if (currentSkinIndex >= skinImages.Length)
+        {
+            currentSkinIndex = 0;
+        }
+        
+        // Initialize the UI with the loaded skin
         UpdateSkinDisplay();
     }
 
