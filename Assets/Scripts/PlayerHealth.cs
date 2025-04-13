@@ -25,6 +25,18 @@ public class PlayerHealth : MonoBehaviour
             {
                 fireballShoot.EnableFireballPower();
             }
+        } else if (levelName == "level3")
+        {
+            FireballShoot fireballShoot = player.GetComponent<FireballShoot>();
+            if (fireballShoot != null)
+            {
+                fireballShoot.EnableFireballPower();
+            }
+            IceballShoot iceballShoot = player.GetComponent<IceballShoot>();
+            if (iceballShoot != null)
+            {
+                iceballShoot.EnableFreezePower();
+            }
         }
     }
 
