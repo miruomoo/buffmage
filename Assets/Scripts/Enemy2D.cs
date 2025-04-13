@@ -27,10 +27,10 @@ public class Enemy2D : MonoBehaviour
         if (other.CompareTag("Projectile"))
         {
             health--;
+            other.gameObject.SetActive(false);
             if (health <= 0)
             {
                 gameObject.SetActive(false);
-                other.gameObject.SetActive(false);
             }
         }
         if (other.CompareTag("Iceball"))

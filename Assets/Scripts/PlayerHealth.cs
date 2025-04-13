@@ -47,6 +47,10 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage();
         }
+        if (other.CompareTag("EnemyProjectile"))
+        {
+            TakeDamage();
+        }
         if (other.CompareTag("Health"))
         {
             Heal();

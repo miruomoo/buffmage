@@ -11,6 +11,7 @@ TagManager:
   - Iceball
   - Health
   - Mana
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Camera
   - Projectile
   - Player
-  - 
+  - EnemyProjectile
   - 
   - 
   - 

@@ -426,8 +426,8 @@ GameObject:
   - component: {fileID: 213995130}
   - component: {fileID: 213995129}
   - component: {fileID: 213995128}
-  - component: {fileID: 213995127}
   - component: {fileID: 213995126}
+  - component: {fileID: 213995131}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -449,20 +449,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveDistance: 10
---- !u!114 &213995127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213995125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4375c57c2ffe0c347a7d8b4d7f63c9ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  frozenEffect: {fileID: 1072524218}
 --- !u!61 &213995128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -576,6 +562,25 @@ Transform:
   - {fileID: 1072524221}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &213995131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213995125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511ae8b0ebaeeae4da0f6eb98d53c021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingRange: 10
+  magicSpeed: 10
+  shootCooldown: 2
+  magicPrefab: {fileID: 7146806739331601621, guid: 963888054c6368145be055a2289bbc5b, type: 3}
+  firePoint: {fileID: 213995130}
+  health: 3
+  frozenEffect: {fileID: 1072524218}
 --- !u!1 &244704285
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +890,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &467370649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467370651}
+  - component: {fileID: 467370650}
+  m_Layer: 0
+  m_Name: DeathMenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &467370650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467370649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46846316a03ba45aba8c4fd27e5950bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &467370651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467370649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1161.1609, y: 308.08923, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500762644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3567,7 +3616,7 @@ PrefabInstance:
     - target: {fileID: 1009925699349723499, guid: b0fa61702411d4d72b69241feda317b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 467370650}
     - target: {fileID: 1009925699349723499, guid: b0fa61702411d4d72b69241feda317b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3627,7 +3676,7 @@ PrefabInstance:
     - target: {fileID: 3546260423522783590, guid: b0fa61702411d4d72b69241feda317b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 467370650}
     - target: {fileID: 3546260423522783590, guid: b0fa61702411d4d72b69241feda317b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4243,7 +4292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FINISH ->
+  m_text: LEVEL 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -5382,3 +5431,4 @@ SceneRoots:
   - {fileID: 2137420738}
   - {fileID: 1072448110}
   - {fileID: 213995130}
+  - {fileID: 467370651}
