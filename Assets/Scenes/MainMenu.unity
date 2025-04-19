@@ -628,6 +628,10 @@ MonoBehaviour:
   infoText: {fileID: 133877772}
   settingsPanel: {fileID: 1690338553}
   ezekielSprite: {fileID: 707402901}
+  ezekielSprite1: {fileID: 55597885}
+  ezekielSprite2: {fileID: 57436607}
+  leftArrow: {fileID: 1816795305}
+  rightArrow: {fileID: 1212155592}
 --- !u!4 &419049343
 Transform:
   m_ObjectHideFlags: 0
@@ -4081,6 +4085,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leaderboardPanel: {fileID: 1860723016}
   ezekielSprite: {fileID: 707402901}
+  ezekielSprite1: {fileID: 55597885}
+  ezekielSprite2: {fileID: 57436607}
+  leftArrow: {fileID: 1816795305}
+  rightArrow: {fileID: 1212155592}
 --- !u!4 &1999606417
 Transform:
   m_ObjectHideFlags: 0
@@ -4271,7 +4279,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2f3005967fe334d65b745cb137df98d7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0

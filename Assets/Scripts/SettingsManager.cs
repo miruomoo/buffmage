@@ -8,6 +8,11 @@ public class SettingsManager : MonoBehaviour
     public GameObject infoText;
     public GameObject settingsPanel;
     public SpriteRenderer ezekielSprite;
+    public SpriteRenderer ezekielSprite1;
+    public SpriteRenderer ezekielSprite2;
+    public GameObject leftArrow;
+    public GameObject rightArrow;
+
 
     void Start()
     {
@@ -34,24 +39,31 @@ public class SettingsManager : MonoBehaviour
     public void OpenSettings()
     {
         settingsPanel.SetActive(true);
-        DimEzekiel(0f); // Dim Ezekiel when settings open
+        DimSprite(ezekielSprite, 0); // Dim Ezekiel when settings open
+        DimSprite(ezekielSprite1, 0); // Dim Ezekiel when settings open
+        DimSprite(ezekielSprite2, 0); // Dim Ezekiel when settings open
+        leftArrow.SetActive(false);
+        rightArrow.SetActive(false);
     }
 
     // Close Settings Panel
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
-        DimEzekiel(1f); // Restore Ezekiel visibility
+        DimSprite(ezekielSprite, 1); // Restore Ezekiel visibility
+        DimSprite(ezekielSprite1, 1); // Dim Ezekiel when settings open
+        DimSprite(ezekielSprite2, 1); // Dim Ezekiel when settings open
+        leftArrow.SetActive(true);
+        rightArrow.SetActive(true);
     }
 
-    // Dim or Restore Ezekiel
-    void DimEzekiel(float alpha)
+    void DimSprite(SpriteRenderer sprite, float alpha)
     {
-        if (ezekielSprite != null)
+        if (sprite != null)
         {
-            Color color = ezekielSprite.color;
+            Color color = sprite.color;
             color.a = alpha;
-            ezekielSprite.color = color;
+            sprite.color = color;
         }
     }
 
