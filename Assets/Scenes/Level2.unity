@@ -975,6 +975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   moveDistance: 5
+  sprite: {fileID: 0}
 --- !u!114 &59837160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1810,7 +1811,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.599094
+  orthographic size: 4.3658514
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4083,6 +4084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   moveDistance: 2
+  sprite: {fileID: 0}
 --- !u!114 &580196289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5861,6 +5863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   moveDistance: 2
+  sprite: {fileID: 0}
 --- !u!114 &817973585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10871,6 +10874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   moveDistance: 2
+  sprite: {fileID: 0}
 --- !u!114 &1579234429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11733,6 +11737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   moveDistance: 2
+  sprite: {fileID: 0}
 --- !u!114 &1653030262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15527,6 +15532,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 10
   maxJumps: 1
+  spriteRenderer: {fileID: 1116027263}
   groundCheck: {fileID: 803968879}
   groundLayer:
     serializedVersion: 2

@@ -9,6 +9,7 @@ public class PlayerController2D : MonoBehaviour
     private bool isGrounded;
     private int jumpCount = 0;     // Track number of jumps
     public int maxJumps = 1;       // Maximum number of jumps allowed
+    public SpriteRenderer spriteRenderer; // Public reference to the SpriteRenderer component
 
     public Transform groundCheck;  // Empty GameObject under the player
     public LayerMask groundLayer;  // Layer to detect ground
@@ -27,8 +28,17 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
-        
         float moveInput = Input.GetAxisRaw("Horizontal");
+
+        // Flip the sprite based on movement direction
+        if (moveInput < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (moveInput > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
 
         // Move the player
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);

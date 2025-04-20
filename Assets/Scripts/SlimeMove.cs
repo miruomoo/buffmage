@@ -6,6 +6,8 @@ public class SlimeMove : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float moveDistance = 5f;
+
+    public SpriteRenderer sprite;
     
     private Vector3 startPosition;
     private bool movingRight = true;
@@ -29,10 +31,19 @@ public class SlimeMove : MonoBehaviour
         if (movingRight && transform.position.x >= startPosition.x + moveDistance)
         {
             movingRight = false;
+            // Flip the sprite when changing to left direction
+            if (sprite != null) {
+                sprite.flipX = true;
+            }
         }
         else if (!movingRight && transform.position.x <= startPosition.x)
         {
             movingRight = true;
+            // Flip the sprite back when changing to right direction
+            if (sprite != null) {
+                sprite.flipX = false;
+            };
+            
         }
     }
 
