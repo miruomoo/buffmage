@@ -11,7 +11,7 @@ Built using **Unity** and **C#**.
   Explore diverse stages with increasing difficulty.
 
 - **4 Enemy Variants + 1 Boss**  
-  Battle goblins, undead creatures, and face a climactic final boss.
+  Battle slimes, minions, and face a climactic final boss.
 
 - **2 Spells**  
   Master the freeze and fireball spells to defeat enemies and solve challenges.
