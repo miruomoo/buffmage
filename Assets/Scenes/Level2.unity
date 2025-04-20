@@ -2808,6 +2808,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0be26facd9504c6c8867b45069a8fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstTimerScene: Level1
+  lastTimerScene: Level3
+  winCanvas: {fileID: 0}
+  finalTimeText: {fileID: 0}
 --- !u!1 &331557579
 GameObject:
   m_ObjectHideFlags: 0
