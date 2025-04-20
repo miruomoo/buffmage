@@ -2850,9 +2850,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1307387933}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene1
+      - m_Target: {fileID: 150486720}
+        m_TargetAssemblyTypeName: NameManager, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3864,7 +3864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6b761867ffaa149b6673121d1d4a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leaderboardText: {fileID: 2071078263}
 --- !u!1 &1898532521
 GameObject:
   m_ObjectHideFlags: 0

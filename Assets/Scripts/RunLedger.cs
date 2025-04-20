@@ -18,9 +18,17 @@ public class RunLedger : MonoBehaviour
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        Load();
     }
-
+    void OnEnable()
+    {
+        if (Instance == null) Instance = this;
+    }
+    [RuntimeInitializeOnLoadMethod]
+    static void AutoCreate()
+    {
+        if (Instance == null)
+            new GameObject("RunLedger").AddComponent<RunLedger>();
+    }
     public void AddRun(string name, float time)
     {
         runs.Add(new Run { name = name, time = time });
