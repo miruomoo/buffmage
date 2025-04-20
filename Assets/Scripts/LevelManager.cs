@@ -1,18 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;        // remove this line if you don�t show WinCanvas here
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
     [Header("Timer Setup")]
-    [SerializeField] string firstTimerScene = "Level1";   // clock starts here
-    [SerializeField] string lastTimerScene = "Level3";   // clock stops here
+    [SerializeField] string firstTimerScene = "Level1";
+    [SerializeField] string lastTimerScene = "Level3";
 
     [Header("(Optional) Win UI")]
-    [SerializeField] GameObject winCanvas;   // leave null if you use a separate FinishFlag
+    [SerializeField] GameObject winCanvas;
     [SerializeField] TMP_Text finalTimeText;
 
-    /*Scene Entry*/
+    /* ───────── Scene Entry ───────── */
     void Start()
     {
         // If we've just landed in the first timed level, create/start the clock
@@ -23,44 +23,53 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    /*Door Collision*/
-    private void OnTriggerEnter2D(Collider2D other)
+    /* ───────── Door Collision ───────── */
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
-        // If this door is in the last timed level, stop & show results *before* loading next
-        if (SceneManager.GetActiveScene().name == lastTimerScene)
+        bool isLast = SceneManager.GetActiveScene().name == lastTimerScene;
+
+        if (isLast)
         {
             TimerManager.Instance.StopTimer();
-            if (winCanvas != null && finalTimeText != null)
+            float runSec = TimerManager.Instance.ElapsedSeconds;
+
+            /* +++++++++ SAVE the run to RunLedger +++++++++ */
+            string pName = PlayerPrefs.GetString("PlayerName", "-----");
+            RunLedger.Instance.AddRun(pName, runSec);
+
+            /* +++++++++ Show WinCanvas +++++++++ */
+            if (winCanvas && finalTimeText)
             {
-                finalTimeText.text = "Time: " +
-                    TimerManager.Format(TimerManager.Instance.ElapsedSeconds);
+                finalTimeText.text = $"Time: {TimerManager.Format(runSec)}";
                 winCanvas.SetActive(true);
-                Time.timeScale = 0f;              // pause gameplay (optional)
+                Time.timeScale = 0f;        // pause gameplay
             }
         }
 
         LoadNextLevel();
     }
 
-    /*Scene Loading*/
+    /* ───────── Scene Loading ───────── */
     void LoadNextLevel()
     {
-        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+        Time.timeScale = 1f;                // un‑pause before scene change
 
-        if (nextScene < SceneManager.sceneCountInBuildSettings)
-            SceneManager.LoadScene(nextScene);
+        int next = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (next < SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(next);
         else
             Debug.Log("No more levels! Game finished.");
     }
 
-    /*Helpers*/
+    /* ───────── Helpers ───────── */
     void EnsureTimerExists()
     {
         if (TimerManager.Instance != null) return;
 
         GameObject go = new GameObject("TimerManager");
-        go.AddComponent<TimerManager>();          // Awake will call DontDestroyOnLoad
+        go.AddComponent<TimerManager>();    // Awake will call DontDestroyOnLoad
     }
 }

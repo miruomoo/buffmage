@@ -5,20 +5,31 @@ using TMPro;
 public class NameManager : MonoBehaviour
 {
     public TMP_InputField nameInput;
-    private string playerName;
+    const int MAX_LEN = 5;
 
-    public void StartGame()
+    void Start()
     {
-        playerName = nameInput.text;
+        // Autofill previous name if it exists
+        if (PlayerPrefs.HasKey("PlayerName"))
+            nameInput.text = PlayerPrefs.GetString("PlayerName");
 
-        if (playerName.Length > 0 && playerName.Length <= 5)
+        // Enforce the 5 char limit in the InputField itself
+        nameInput.characterLimit = MAX_LEN;
+    }
+
+    public void StartGame()      // hooked to the PLAY button
+    {
+        string raw = nameInput.text.Trim().ToUpper();
+
+        if (raw.Length == 0 || raw.Length > MAX_LEN)
         {
-            PlayerPrefs.SetString("PlayerName", playerName);  // Save the name
-            SceneManager.LoadScene("Scene1");  // Load the next scene
+            Debug.Log("Invalid name! Name must be 1 to 5 characters.");
+            return;
         }
-        else
-        {
-            Debug.Log("Invalid name! Name must be between 1 and 5 characters.");
-        }
+
+        PlayerPrefs.SetString("PlayerName", raw);
+        PlayerPrefs.Save();                       // flush to disk
+
+        SceneManager.LoadScene("Level1");         
     }
 }
