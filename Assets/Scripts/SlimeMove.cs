@@ -11,11 +11,13 @@ public class SlimeMove : MonoBehaviour
     
     private Vector3 startPosition;
     private bool movingRight = true;
+    private float setMoveSpeed;
     
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
+        setMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -52,6 +54,6 @@ public class SlimeMove : MonoBehaviour
     }
 
     public void unfreeze(){
-        moveSpeed = 2;
+        moveSpeed = setMoveSpeed;
     }
 }

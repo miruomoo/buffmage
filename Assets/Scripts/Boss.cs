@@ -13,9 +13,12 @@ public class Boss : MonoBehaviour
 
     private float lastShotTime; // Time when the last shot was fired
     private GameObject player; // Reference to the player
+    private bool isFrozen = false; // Track if boss is frozen
+
+    public GameObject finishDoor;
 
     [Header("Health Settings")]
-    public int health = 5;
+    public int health = 20;
     [SerializeField] private GameObject frozenEffect;
 
     // Start is called before the first frame update
@@ -34,12 +37,16 @@ public class Boss : MonoBehaviour
             return;
         }
 
-        // Check if player is in range and enough time has passed since last shot
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer <= shootingRange && Time.time >= lastShotTime + shootCooldown)
+        // Only shoot if not frozen
+        if (!isFrozen)
         {
-            ShootMagic();
-            lastShotTime = Time.time;
+            // Check if player is in range and enough time has passed since last shot
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            if (distanceToPlayer <= shootingRange && Time.time >= lastShotTime + shootCooldown)
+            {
+                ShootMagic();
+                lastShotTime = Time.time;
+            }
         }
     }
 
@@ -47,19 +54,19 @@ public class Boss : MonoBehaviour
     {
         // Calculate direction from boss to player
         Vector3 direction = (player.transform.position - transform.position).normalized;
-        
+
         // Create the magic projectile
-        GameObject magic = Instantiate(magicPrefab, 
-            firePoint != null ? firePoint.position : transform.position, 
+        GameObject magic = Instantiate(magicPrefab,
+            firePoint != null ? firePoint.position : transform.position,
             Quaternion.identity);
-        
+
         // Add velocity to the magic projectile
         Rigidbody2D rb = magic.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.velocity = direction * magicSpeed;
         }
-        
+
         // Rotate magic projectile to face direction
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         magic.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -67,8 +74,10 @@ public class Boss : MonoBehaviour
 
     private IEnumerator UnfreezeAfterDelay(SlimeMove slime, float delay)
     {
+        isFrozen = true;
         yield return new WaitForSeconds(delay);
         slime.unfreeze();
+        isFrozen = false;
     }
 
     private IEnumerator DeactivateFrozenEffect(GameObject frozenEffect, float delay)
@@ -86,8 +95,17 @@ public class Boss : MonoBehaviour
         {
             health--;
             other.gameObject.SetActive(false);
+            if (health <= 8)
+            {
+                shootCooldown = 1f;
+            }
+            if (health <= 3)
+            {
+                shootCooldown = 0.5f;
+            }
             if (health <= 0)
             {
+                finishDoor.SetActive(true);
                 gameObject.SetActive(false);
             }
         }
@@ -98,13 +116,13 @@ public class Boss : MonoBehaviour
             if (slimeMove != null)
             {
                 slimeMove.freeze();
-                StartCoroutine(UnfreezeAfterDelay(slimeMove, 6f));
-                
+                StartCoroutine(UnfreezeAfterDelay(slimeMove, 2f));
+
                 // Simply activate/deactivate the referenced effect
                 if (frozenEffect != null)
                 {
                     frozenEffect.SetActive(true);
-                    StartCoroutine(DeactivateFrozenEffect(frozenEffect, 6f));
+                    StartCoroutine(DeactivateFrozenEffect(frozenEffect, 2f));
                 }
             }
             other.gameObject.SetActive(false);

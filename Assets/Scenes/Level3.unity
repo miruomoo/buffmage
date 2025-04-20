@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  moveDistance: 20
+  moveDistance: 18
   sprite: {fileID: 1496759299}
 --- !u!61 &213995128
 BoxCollider2D:
@@ -1194,6 +1194,7 @@ MonoBehaviour:
   shootCooldown: 2
   magicPrefab: {fileID: 7146806739331601621, guid: 963888054c6368145be055a2289bbc5b, type: 3}
   firePoint: {fileID: 213995130}
+  finishDoor: {fileID: 338512333}
   health: 20
   frozenEffect: {fileID: 1072524218}
 --- !u!1 &244704285
@@ -1440,7 +1441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &338512334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7120,8 +7121,8 @@ Transform:
   m_GameObject: {fileID: 1072524218}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.319, y: -0.014, z: 0}
-  m_LocalScale: {x: 3.5061579, y: 2.7939494, z: 1}
+  m_LocalPosition: {x: -0.18, y: 0.05, z: 0}
+  m_LocalScale: {x: 5.137388, y: 3.04613, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 213995130}

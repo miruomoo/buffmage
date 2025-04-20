@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;        // remove this line if you don’t show WinCanvas here
+using TMPro;        // remove this line if you donï¿½t show WinCanvas here
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     /*Scene Entry*/
     void Start()
     {
-        // If we’ve just landed in the first timed level, create/start the clock
+        // If we've just landed in the first timed level, create/start the clock
         if (SceneManager.GetActiveScene().name == firstTimerScene)
         {
             EnsureTimerExists();
